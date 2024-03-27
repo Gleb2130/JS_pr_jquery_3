@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Бібліотека книг</title>
+</head>
+
+<body>
+    <input type="search" id="search-books"> 
+    <button id="find">Знайти</button><br>
+
+    <button id="add-book-btn">Додати книгу</button>
+    <button id="refresh-book-btn">Оновити</button>
+
+
+    <div id="main">
+        <div id="book-list">
+        </div>
+    </div>
+
+    
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Додати нову книгу</h2>
+            <label for="title">Назва:</label>
+            <input type="text" id="title" required>
+            <label for="author">Автор:</label>
+            <input type="text" id="author" required>
+            <label for="price">Ціна:</label>
+            <input type="number" id="price" required>
+            <button id="save-book-btn">Додати</button>
+        </div>
+    </div>
+
+    <script id="book-template" type="text/template">
+        <div class="book">
+            <h3 class="book-title">{{title}}</h3>
+            <p class="book-author">{{author}}</p>
+            <p class="book-price">{{price}} $</p>
+            <button id="{{id}}">Видалити</button>
+        </div>
+    </script>
+
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+
+
